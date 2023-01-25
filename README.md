@@ -38,3 +38,27 @@ $yarn install -g serve
 ```
 $serve -s build
 ```
+
+-----------------
+
+
+### [F/E] Index
+#### ✨ 리뉴얼
+- PHP → React
+- Typescript
+- Recoil
+
+사용자의 편의성을 고려하여 UIUX 개선시키는 것에 중점 둠
+
+반응형
+
+#### DatePicker
+- 데이터 없을 경우 예외처리
+
+#### 🧠 목표 및 배운점
+- 백엔드에서 batch라는 데이터 수집기의 개념 이해
+- 리액트 polling
+- 일정한 주기로 HTTP 요청을 보내는 방식
+- 새로운 상태관리 (recoil) learning
+- 데이터 핸들링
+- 중복되는 코드는 리팩토링
