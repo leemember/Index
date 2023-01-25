@@ -1,0 +1,73 @@
+.board2__domestic {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.board2__domestic li {
+    background: #9fa0a4;
+    height: 143px;
+    vertical-align: top;
+    border-radius: 4px;
+    padding: 16px;
+    width: calc(100% / 4);
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 1px 5px #aaa;
+    margin-right: 15px;
+}
+.board2__domestic li:nth-child(5) {
+    margin-right: 0;
+}
+
+.board2__domestic--round {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.board2__domestic .board2__ranking {
+    border-radius: 15px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    padding: 0 15px;
+    text-align: center;
+    background: #fff;
+    display: inline-flex;
+    color: #b4b7be;
+}
+
+
+.board2__domestic--company {
+    padding-right: 20px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 300;
+    vertical-align: bottom;
+}
+
+.board2__domestic--per {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.board2__domestic li:nth-child(1) {
+    background: #757b87;
+}
+
+.board2__domestic li:nth-child(2) {
+    background: #93969d;
+}
+
+@media (max-width: 1850px) {
+    .board2__domestic--company {
+        padding-right: 0;
+        font-size: 28px;
+        font-weight: 400;
+    }
+}

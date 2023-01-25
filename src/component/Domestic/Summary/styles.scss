@@ -1,0 +1,48 @@
+.board1__topSummary {
+    width: 100%;
+    display: flex;
+    border: 1px solid #ccc;
+    div {
+        width: 100%;
+        border-right: 1px solid #ccc;
+        text-align: center;
+        &.bithumb {
+            ul:first-child {
+                p {
+                    font-weight: 600;
+                }
+            }
+            ul:last-child {
+                background-color: #d83d20;
+                font-weight: bold;
+                p {
+                    color: white;
+                }
+            }
+        }
+        &:last-child {
+            border-right: none;
+        }
+        ul:first-child {
+            border-bottom: 1px solid #ccc;
+        }
+        ul {
+            &:last-child {
+                li {
+                    padding: 20px 0;
+                    p {
+                        font-size: 2.5rem;
+                    }
+                }
+            }
+            li {
+                padding: 10px 0;
+
+                p {
+                    font-size: 1.4rem;
+                    color: #485567;
+                }
+            }
+        }
+    }
+}

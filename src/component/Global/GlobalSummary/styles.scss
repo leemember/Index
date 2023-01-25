@@ -1,0 +1,86 @@
+.board2__global {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.board2__global li {
+    width: calc(100% / 4);
+    vertical-align: top;
+    border-radius: 4px;
+    padding: 16px 0 45px 0;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 1px 5px #aaa;
+    margin-right: 15px;
+}
+
+.board2__global li:nth-child(1) {
+    background: #ff720d;
+}
+
+.board2__global > li:nth-child(1) .board2__ranking {
+    color: #ff720d;
+}
+
+.board2__global li:nth-child(2) {
+    background: #e76857;
+}
+
+.board2__global > li:nth-child(2) .board2__ranking {
+    color: #e76857;
+}
+
+.board2__global li:nth-child(3) {
+    background: #e15675;
+}
+
+.board2__global > li:nth-child(3) .board2__ranking {
+    color: #e15675;
+}
+
+.board2__global li:nth-child(4) {
+    background: #d758a7;
+}
+
+.board2__global > li:nth-child(4) .board2__ranking {
+    color: #d758a7;
+}
+.board2__global li:nth-child(5) {
+    background: #b651d1;
+    margin-right: 0;
+}
+
+.board2__global > li:nth-child(5) .board2__ranking {
+    color: #b651d1;
+}
+.board2__ranking--round {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.board2__global .board2__ranking {
+    border-radius: 15px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    padding: 0 15px;
+    text-align: center;
+    background: #fff;
+    display: inline-flex;
+    margin-right: 16px;
+}
+
+.board2__ranking--company {
+    font-size: 1.6rem;
+    padding-top: 1rem;
+}
+
+.board2__ranking--per {
+    margin-top: 5px;
+    font-size: 2.8rem;
+}

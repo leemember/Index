@@ -1,0 +1,35 @@
+.board1__rank-detail-result {
+    padding: 0 1rem 0 0;
+    display: flex;
+    align-items: normal;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.board1__rank-detail-result .center {
+    text-align: center;
+}
+
+.board1__rank-detail-result table {
+    width: 50%;
+    border-collapse: collapse;
+    border: 1px solid #3d414b;
+    margin-bottom: 0.7rem;
+}
+
+.board1__rank-detail-result th {
+    padding: 5px;
+    border: 1px solid #3d414b;
+    font-weight: 700;
+}
+
+.board1__rank-detail-result td {
+    border: 1px solid #3d414b;
+    text-align: right;
+    padding: 8px;
+}
+
+.board1__rank-detail-result h4 {
+    font-weight: 700;
+}

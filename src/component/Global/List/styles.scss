@@ -1,0 +1,68 @@
+.coinListBox {
+    display: flex;
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.coinListBox section:nth-child(1) {
+    width: 15.3%;
+}
+
+.coinListBox section {
+    width: 19.16666666%;
+}
+
+.coinListBox .coinList .coinList__rate {
+    display: flex;
+    width: 100%;
+}
+
+.coinListBox .coinList .coinList__rate li {
+    width: 50%;
+    text-align: right;
+}
+
+.coinListBox .coinList .coinList__title.headTitle {
+    background: #f9f9f9;
+}
+.coinListBox .coinList .coinList__title {
+    display: grid;
+    text-align: center;
+}
+
+.coinListBox .coinList .coinList__title.girdSum {
+    display: grid;
+}
+
+.coinListBox .coinList .coinList__title.girdSum li {
+    display: grid;
+    grid-template-rows: 49px;
+    justify-content: center;
+    align-items: center;
+}
+
+.coinListBox .coinList .coinList__title.rowSum {
+    display: flex;
+    width: 100%;
+}
+
+.coinListBox .coinList .coinList__title.rowSum li {
+    width: 50%;
+}
+
+.coinListBox li {
+    border-top: 1px solid #ebebeb;
+    border-left: 1px solid #ebebeb;
+    padding: 10px;
+}
+
+.coinListBox .coinList__fontBold li {
+    font-weight: 700;
+}
+
+.fontBold__right li {
+    font-weight: 500;
+    text-align: right;
+}

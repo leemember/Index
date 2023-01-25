@@ -1,0 +1,62 @@
+.board2__header {
+    display: flex;
+    width: 100%;
+    vertical-align: top;
+    padding: 0 40px 0 45px;
+    box-shadow: 0 1px 5px #aaa;
+    box-sizing: border-box;
+    background: #fff;
+    color: #666;
+    justify-content: space-between;
+}
+
+.board2__header > h1 {
+    font-size: 24px;
+    padding: 20px 0;
+    line-height: 39px;
+    display: flex;
+    color: #666;
+    align-items: normal;
+}
+
+.board2__header > h1 img {
+    width: 158px;
+    height: 39px;
+    margin-right: 10px;
+    line-height: 39px;
+}
+
+.board2__header {
+    position: relative;
+    h1 {
+        display: flex;
+        strong {
+            vertical-align: 6px;
+            font-weight: 700;
+            margin-top: 5px;
+            span {
+                margin-left: 10px;
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+.board2__header .board2__right {
+   display: flex;
+}
+
+.board2__header .board2__right p {
+    display: flex;
+    font-size: 1rem;
+    font-weight: 500;
+    align-items: center;
+    margin-left: 12px;
+    .totalDeal {
+        font-weight: bold;
+    }
+}
+
+.board2__header .board2__right strong {
+    margin: 0 8px;
+}

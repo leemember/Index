@@ -1,0 +1,44 @@
+.board2__result--rank {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.board2__result--rank .board2__result--table {
+    width: 50%;
+}
+
+.board2__result--rank .user {
+    margin-right: 15px;
+}
+
+.board2__result--table {
+    background: #ebebeb;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 5px #aaa;
+}
+
+.board2__result--table th {
+    text-align: left;
+    width: 25%;
+    color: #333;
+    padding: 10px 24px;
+    background: #f9f9f9;
+    font-size: 16px;
+    border-bottom: 1px solid #ebebeb;
+    border-left: 1px solid #ebebeb;
+    font-weight: 300;
+    border-top: none;
+}
+
+.board2__result--table td {
+    background: #fff;
+    font-size: 16px;
+    color: #333;
+    padding: 10px 24px;
+    text-align: right;
+    border-bottom: 1px solid #ebebeb;
+    border-left: 1px solid #ebebeb;
+    font-weight: 400;
+}

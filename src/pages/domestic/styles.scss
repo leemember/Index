@@ -1,0 +1,20 @@
+.board1__mainBorder {
+    margin:10px;
+}
+
+.board1 .desc {
+    font-size: 0.9rem;
+    margin-top: 26px;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 500;
+}
+
+.board1 {
+    background: #fff;
+    .board1__search {
+        justify-content: end;
+        margin-bottom: 10px;
+        display: flex;
+    }
+}

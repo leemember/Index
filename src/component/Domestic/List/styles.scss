@@ -1,0 +1,197 @@
+.domestic__coinlist {
+    display: flex;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #3d414b;
+    box-sizing: border-box;
+}
+
+.domestic__coinlist .header {
+    background: #656c75;
+    color: #fff;
+    padding: 5px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 1px solid #3d414b;
+}
+
+.domestic__coinlist .header li {
+    text-align: center;
+    font-weight: bold;
+}
+
+.domestic__coinlist section {
+    border-right: 1px solid #3d414b;
+    &:nth-of-type(1) {
+        width: calc(100% / 6) !important;
+    }
+    &:nth-of-type(2) {
+        width: calc(100% / 4) !important;
+    }
+    &:nth-of-type(3) {
+        width: calc(100% / 4) !important;
+    }
+    width: calc(100% / 8);
+}
+
+.domestic__coinlist section ul li {
+    padding: 5px;
+}
+
+.domesticEight {
+    background-color: #fff;
+    &.none {
+        border-right: none;
+    }
+}
+.domesticEight__oneLayout {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    text-align: right;
+    .boldText {
+        font-weight: bold;
+    }
+    &:last-child {
+        border-bottom: none;
+    }
+}
+.domesticEight .header {
+    display: grid;
+    grid-row: 1 / 2;
+}
+
+.domesticEight .domestic__coinlist--infoList {
+    width: 100%;
+}
+
+.domesticEight .domestic__coinlist--infoList li {
+    width: 100%;
+    text-align: center;
+}
+
+.domestic__coinlist--infoTwoSum {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    li {
+        font-weight: bold;
+    }
+}
+
+.defaultLayout {
+    background-color: #fff;
+}
+
+.domestic__coinlist--infoSum {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.domestic__coinlist--infoSum li {
+    font-weight: bold;
+}
+li.headerStyle {
+    background-color: #e9e9e9;
+    padding: 10px 5px;
+    border-bottom: 1px solid #3d414b;
+    border-right: 1px solid #3d414b;
+    text-align: center;
+}
+
+li:last-child.headerStyle {
+    border-right: none;
+}
+
+.domestic__coinlist--infoDesc,
+.domestic__coinlist--infoList {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.domestic__coinlist--infoTwoDesc {
+    li {
+        font-weight: bold;
+    }
+}
+.domestic__coinlist--infoTwoDesc,
+.domestic__coinlist--infoTwoList {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: right;
+    li:first-child {
+        border-right: 1px solid #ddd;
+    }
+    li {
+        border-bottom: 1px solid #ddd;
+    }
+}
+
+.domestic__coinlist--infoTwoList:last-child {
+    li {
+        border-bottom: none;
+    }
+}
+
+.domestic__coinlist--name {
+    text-align: center;
+}
+.domestic__coinlist--border {
+    .headerTop {
+        border-bottom: 1px solid #ddd !important;
+    }
+}
+
+.domestic__coinlist--border li {
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+.domestic__coinlist--border li:last-child {
+    border-bottom: none;
+}
+
+.domestic__coinlist--border .headerStyle {
+    border-right: none;
+    border-bottom: 1px solid #3d414b;
+}
+
+.domestic__coinlist--infoDesc li {
+    font-weight: bold;
+    &:last-child {
+        border-right: none;
+    }
+}
+
+.domestic__coinlist--infoDesc li.red {
+    color: #e15241;
+}
+
+.domestic__coinlist {
+    .bithumb {
+        background-color: #fffaed;
+    }
+    .Upbit {
+        background-color: #eff8ff;
+    }
+}
+.domestic__coinlist--infoList li,
+.domestic__coinlist--infoDesc li {
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: right;
+}
+
+.domestic__coinlist--infoList:last-child {
+    li {
+        border-bottom: none;
+    }
+}
+.domestic__coinlist--infoDesc:last-child {
+    li {
+        border-bottom: none;
+    }
+}
+
+.domestic__coinlist--infoList li:last-child {
+    border-right: none;
+}

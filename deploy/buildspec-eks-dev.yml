@@ -1,0 +1,71 @@
+version: 0.2
+
+env:
+  variables:
+    NODE_PROFILE: "dev"
+    REPO_URI: "807380035085.dkr.ecr.ap-northeast-2.amazonaws.com/index-web-dev-repo"
+    CONTAINER_NAME: "systems-index-web-dev-container"
+    SERVICE_ROLE: "arn:aws:iam::807380035085:role/service-role/codebuild-systems-index-web-eks-dev-build-service-role"
+    KUBECTL_URL: "https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl"
+    EKS_ROLE: "arn:aws:iam::807380035085:role/codebuild-eks-service-role"
+    DEPLOYMENT_FILE: "./deploy/index-web-deployment.yml"
+    SERVICE_FILE: "./deploy/index-web-service.yml"
+    NAMESPACE: "systems-index-dev-ns"
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+    commands:
+      - echo Logging in to Amazon EKS...
+      - curl -o kubectl $KUBECTL_URL
+      - chmod +x ./kubectl
+      - mv ./kubectl /usr/local/bin/kubectl
+      - mkdir ~/.kube
+      - aws eks --region ap-northeast-2 update-kubeconfig --name systems-eks-cluster --role-arn $EKS_ROLE
+      - aws sts get-caller-identity
+      - kubectl get svc -n $NAMESPACE
+      - kubectl get po -n $NAMESPACE
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin ${REPO_URI}
+      - REPOSITORY_URI=${REPO_URI}
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
+      - ASSUME_ROLE_ARN=${SERVICE_ROLE}
+      - TEMP_ROLE=$(aws sts assume-role --role-arn ${ASSUME_ROLE_ARN} --role-session-name test)
+      - export TEMP_ROLE
+      - export AWS_ACCESS_KEY_ID=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.AccessKeyId')
+      - export AWS_SECRET_ACCESS_KEY=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SecretAccessKey')
+      - export AWS_SESSION_TOKEN=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SessionToken')
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image ...
+      - docker build -f deploy/Dockerfile -t $REPOSITORY_URI:latest --build-arg PROFILES=${NODE_PROFILE} .
+      - echo Build completed on `date`
+  post_build:
+    commands:
+      - echo $REPOSITORY_URI:$IMAGE_TAG
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+      - echo docker tag completed on `date`
+      - echo Pushing the Docker images ...
+      - ls -al
+      - docker push $REPOSITORY_URI:latest
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - echo Writing image definitions file...
+      - printf '[{"name":"%s", "imageUri":"%s"}]' $CONTAINER_NAME $REPOSITORY_URI:latest > imageDefinitions.json
+      - ls -al
+      - AWS_ECR_URI=$REPOSITORY_URI:$IMAGE_TAG
+      - sed -i.bak 's#AWS_ECR_URI#'"$AWS_ECR_URI"'#' $DEPLOYMENT_FILE
+      - sed -i.bak 's#NAMESPACE#'"$NAMESPACE"'#' $DEPLOYMENT_FILE
+      - sed -i.bak 's#NAMESPACE#'"$NAMESPACE"'#' $SERVICE_FILE
+      - cat $DEPLOYMENT_FILE
+      - kubectl apply -f $DEPLOYMENT_FILE
+      - kubectl apply -f $SERVICE_FILE
+cache:
+  paths:
+    - '/root/.gradle/**/*'
+artifacts:
+  files: imageDefinitions.json
