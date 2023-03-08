@@ -2,8 +2,7 @@
 
 ### 목적
 
-> https://index.bithumb.com/board/index1.php <br/> https://index.bithumb.com/board2/index1.php
->
+> 기존에 만들어진 Index 페이지를 클론코딩하여 기술적으로 고도화 시킨 **사내 스터디용 프로젝트**입니다. 상업적으로 사용되지 않기 때문에 허락하에 가져왔습니다.
 
 ### FE 기술스택
 
